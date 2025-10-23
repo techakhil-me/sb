@@ -94,11 +94,11 @@
         rel="stylesheet">
 </head>
 
-<body class="bg-white font-inter overflow-x-hidden">\
+<body class="bg-white font-inter overflow-x-hidden">
     
 
     <!-- Loading Screen -->
-    <div id="loading-screen" class="fixed inset-0 z-[100] bg-white flex flex-col items-center justify-center transition-opacity duration-[2000ms] h-screen">
+    <div id="loading-screen" class="fixed inset-0 z-[100] bg-white flex flex-col items-center justify-center transition-opacity duration-[2000ms] h-screen w-screen">
         <!-- Logo Container -->
         <div class="mb-8">
             <img id="loading-logo" class="h-20 transition-opacity duration-[2000ms] linear" src="/assets/SereneBlissLogo.png" alt="Serene Bliss Logo" />
@@ -155,9 +155,9 @@
         setInterval(pulseLogo, 2000);
         });
         </script>
-    <div class="bg-white min-h-screen">
+    <div class="bg-white min-h-screen w-screen">
         <!-- Navigation Header (Fixed) -->
-        <nav class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-white/40 border-b border-white/20">
+        <nav class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-white/40 border-b border-white/20 w-screen">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
                 <div class="flex items-center justify-between h-16">
                     <!-- Mobile menu button -->
@@ -217,7 +217,7 @@
                 </div>
 
                 <!-- Full Page Mobile Navigation Menu -->
-                <div id="mobile-menu" class="hidden opacity-0 scale-95 transition-all duration-300 ease-in-out md:hidden fixed inset-0 z-40 bg-white">
+                <div id="mobile-menu" class="hidden opacity-0 scale-95 transition-all duration-300 ease-in-out md:hidden fixed inset-0 z-40 bg-white w-screen">
                     <div class="flex flex-col items-center justify-center min-h-screen space-y-8 px-8 bg-white">
                         <!-- Close Button -->
                         <button onclick="toggleMobileMenu()"
@@ -918,8 +918,10 @@
             </div>
         </section>
 
+        
+
         <!-- Gallery Section -->
-        <section id="gallery" class="py-16 lg:py-32">
+        <section id="gallery" class="pt-16 lg:pt-32 overflow-hidden">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
             <div class="text-right space-y-6 mb-16 reveal-up">
                 <div class="inline-flex items-center px-6 py-2 border border-gray-400 rounded-full">
@@ -934,10 +936,15 @@
                 See how our community moves, breathes, and finds balance.
                 </p>
             </div>
+           
+            </div>
+        </section>
 
-            <!-- <div class="relative reveal-up">
-                <div class="flex animate-scroll w-screen">
-                    <div class="flex space-x-6">
+
+             <section class=" overflow-hidden py-16 pt-8 lg:pb-24">
+            <div class="relative">
+                <div class="flex animate-scroll">
+                     <div class="flex space-x-6">
                         <div class="aspect-square w-72 h-72 rounded-2xl overflow-hidden bg-gray-200 flex-shrink-0 marquee-item transition-all duration-300 ease-in-out hover:shadow-2xl">
                             <img src="assets/e3e11b231f644aabf0374e1e2e9bb6135a00de64.png" alt="Yoga Practice" class="w-full h-full object-cover transition-transform duration-300 ease-in-out" />
                         </div>
@@ -956,7 +963,6 @@
                         <div class="aspect-square w-72 h-72 rounded-2xl overflow-hidden bg-gray-200 flex-shrink-0 marquee-item transition-all duration-300 ease-in-out hover:shadow-2xl">
                             <img src="assets/a10891e26db2c16a665385f6ddef8681a0d43f87.png" alt="Yoga Practice" class="w-full h-full object-cover transition-transform duration-300 ease-in-out" />
                         </div>
-         
                         <div class="aspect-square w-72 h-72 rounded-2xl overflow-hidden bg-gray-200 flex-shrink-0 marquee-item transition-all duration-300 ease-in-out hover:shadow-2xl">
                             <img src="assets/e3e11b231f644aabf0374e1e2e9bb6135a00de64.png" alt="Yoga Practice" class="w-full h-full object-cover transition-transform duration-300 ease-in-out" />
                         </div>
@@ -977,7 +983,6 @@
                         </div>
                     </div>
                 </div>
-            </div> -->
             </div>
         </section>
 
