@@ -20,12 +20,13 @@
                     },
                     colors: {
                         'primary': '#f150a7',
-                        'primary-light': '#daecff',
+                        'primary-light': '#e6f2ff',
                         'secondary': '#3772ad',
                         'gray-light': '#f8fafc',
                     },
                     animation: {
                         'scroll': 'scroll 40s linear infinite',
+                        'carousel': 'none',
                     },
                     keyframes: {
                         scroll: {
@@ -92,6 +93,81 @@
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap"
         rel="stylesheet">
+    <style>
+        #testimonials-carousel {
+            display: flex;
+            transition: transform 0.6s ease-in-out;
+            width: 100%;
+        }
+
+        #testimonials-carousel > div {
+            flex-shrink: 0;
+            width: 100%;
+        }
+
+        @media (min-width: 768px) {
+            #testimonials-carousel > div {
+                width: 50%;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            #testimonials-carousel > div {
+                width: 33.333%;
+            }
+        }
+
+        .carousel-container {
+            overflow: hidden;
+            border-radius: 1.5rem;
+        }
+
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        .carousel-indicator {
+            width: 0.75rem;
+            height: 0.75rem;
+            border-radius: 50%;
+            background-color: #d1d5db;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .carousel-indicator.active {
+            width: 2rem;
+            background-color: #f150a7;
+        }
+
+        .carousel-btn {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 9999px;
+            background-color: #f150a7;
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .carousel-btn:hover {
+            background-color: #d03d85;
+        }
+
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+    </style>
 </head>
 
 <body class="bg-white font-inter overflow-x-hidden">
@@ -192,7 +268,7 @@
 
                     <!-- Right Navigation -->
                     <div class="hidden md:flex items-center justify-end flex-1">
-                        <a href="#contact"
+                        <a href="https://wa.me/659108198?text=Hi%20I%20am%20interested%20in%20a%20free%20yoga%20consultation%20-please%20share%20details" target="_blank"
                             class="inline-flex items-center justify-center bg-white hover:bg-gray-50 text-gray-900 px-6 py-2 rounded-full text-base font-medium transition-all duration-200 group">
                             <span>Contact</span>
                             <div class="ml-3 bg-primary group-hover:bg-primary/90 group-hover:rotate-0 group-hover:translate-x-3 p-2 -rotate-45 rounded-full transition-all">
@@ -205,7 +281,7 @@
 
                     <!-- Mobile contact button -->
                     <div class="md:hidden">
-                        <a href="#contact"
+                        <a href="https://wa.me/659108198?text=Hi%20I%20am%20interested%20in%20a%20free%20yoga%20consultation%20-please%20share%20details" target="_blank"
                             class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 group h-10 min-w-[120px]">
                             <svg width="16" height="16" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2">
                                 <path d="M3.5 2.5h10c.552 0 1 .448 1 1v10c0 .552-.448 1-1 1h-10c-.552 0-1-.448-1-1v-10c0-.552.448-1 1-1z" stroke="currentColor" stroke-width="1.5" />
@@ -246,7 +322,7 @@
 
                         <!-- Contact Button -->
                         <div class="pt-8 transform transition-all duration-500 delay-200">
-                            <a href="#contact" onclick="toggleMobileMenu();"
+                            <a href="https://wa.me/659108198?text=Hi%20I%20am%20interested%20in%20a%20free%20yoga%20consultation%20-please%20share%20details" target="_blank" onclick="toggleMobileMenu();"
                                 class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full text-base font-medium transition-all duration-200 h-12 min-w-[140px]">
                                 <span>Contact Us</span>
                             </a>
@@ -308,7 +384,7 @@
                             class="inline-flex items-center justify-center bg-white/40 backdrop-blur-sm hover:bg-white/60 text-gray-900 px-6 py-2 rounded-full text-base font-medium transition-all duration-200">
                             Learn More
                         </a>
-                        <a href="#contact"
+                        <a href="https://wa.me/659108198?text=Hi%20I%20am%20interested%20in%20a%20free%20yoga%20consultation%20-please%20share%20details" target="_blank"
                             class="inline-flex items-center justify-center bg-white hover:bg-gray-50 text-gray-900 px-6 py-2 rounded-full text-base font-medium transition-all duration-200 group">
                             <span>Free Consultation</span>
                             <div class="ml-3 bg-primary group-hover:bg-primary/90 group-hover:rotate-0 group-hover:translate-x-3 p-2 -rotate-45 rounded-full transition-all">
@@ -371,7 +447,7 @@
                             </p>
                         </div>
 
-                        <a href="#contact"
+                        <a href="https://wa.me/659108198?text=Hi%20I%20would%20like%20to%20know%20more%20about%20Reshma%27s%20yoga%20approach%20and%20experience" target="_blank"
                             class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full text-base font-medium transition-all duration-200 group">
                             <span>Know more</span>
                             <div class="ml-3 bg-white group-hover:bg-white/90 group-hover:rotate-0 group-hover:translate-x-3 p-2 -rotate-45 rounded-full transition-all">
@@ -450,7 +526,7 @@
                             </div>
                         </div>
 
-                        <a href="#contact"
+                        <a href="https://wa.me/659108198?text=Hello%20I%20want%20to%20join%20your%20group%20yoga%20classes%20-can%20you%20tell%20me%20the%20schedule%20and%20fees%3F" target="_blank"
                             class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full text-base font-medium transition-all duration-200 group">
                             <span>Join Now</span>
                             <div class="ml-3 bg-white group-hover:bg-white/90 group-hover:rotate-0 group-hover:translate-x-3 p-2 -rotate-45 rounded-full transition-all">
@@ -471,7 +547,7 @@
         </section>
        
         <!-- Kids Yoga Section -->
-        <section class="py-16 lg:py-32 bg-[#daecff]">
+        <section class="py-16 lg:py-32 bg-[#e6f2ff]">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
                 <div class="text-center space-y-6 mb-16 reveal-up">
                     <div class="inline-flex items-center px-6 py-2 border border-gray-400 rounded-full">
@@ -539,7 +615,7 @@
                 </div>
 
                 <div class="text-center mt-16 reveal-up">
-                    <a href="#contact"
+                    <a href="https://wa.me/659108198?text=Hello%20I%20am%20interested%20in%20the%20Kids%20Yoga%20programs%20-please%20share%20details" target="_blank"
                         class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full text-base font-medium transition-all duration-200 group">
                         <span>Know more</span>
                         <div class="ml-3 bg-white group-hover:bg-white/90 group-hover:rotate-0 group-hover:translate-x-3 p-2 -rotate-45 rounded-full transition-all">
@@ -558,7 +634,7 @@
         <section id="benefits" class="py-16 lg:py-32">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-                    <div class="bg-[#daecff] rounded-3xl p-6 lg:p-9 space-y-6 lg:sticky top-24 reveal-up">
+                    <div class="bg-[#e6f2ff] rounded-3xl p-6 lg:p-9 space-y-6 lg:sticky top-24 reveal-up">
                         <div>
                             <h3 class="font-times text-2xl lg:text-4xl text-gray-900 leading-tight tracking-tight mb-4">
                                 Personalized Yoga Sessions
@@ -639,7 +715,7 @@
                             </div>
                         </div>
 
-                        <a href="#contact"
+                        <a href="https://wa.me/659108198?text=Hi%20I%20want%20to%20book%20a%20private%20yoga%20session%20-kindly%20provide%20availability%20and%20pricing" target="_blank"
                             class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full text-base font-medium transition-all duration-200 group">
                             <span>Book Private Session</span>
                             <div class="ml-3 bg-white group-hover:bg-white/90 group-hover:rotate-0 group-hover:translate-x-3 p-2 -rotate-45 rounded-full transition-all">
@@ -673,7 +749,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 reveal-up">
                 <!-- Beach Yoga Sessions -->
-                <div class="bg-[#daecff] rounded-3xl p-8 space-y-6">
+                <div class="bg-[#e6f2ff] rounded-3xl p-8 space-y-6">
                 <div class="w-16 h-16 bg-[#f150a7]/10 rounded-full flex items-center justify-center mx-auto">
                     <svg class="w-8 h-8 text-[#f150a7]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
@@ -707,7 +783,7 @@
                 </div>
 
                 <!-- Corporate Wellness -->
-                <div class="bg-[#daecff] rounded-3xl p-8 space-y-6">
+                <div class="bg-[#e6f2ff] rounded-3xl p-8 space-y-6">
                 <div class="w-16 h-16 bg-[#f150a7]/10 rounded-full flex items-center justify-center mx-auto">
                     <svg class="w-8 h-8 text-[#f150a7]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
@@ -743,7 +819,7 @@
                 </div>
 
                 <!-- Special Events -->
-                <div class="bg-[#daecff] rounded-3xl p-8 space-y-6">
+                <div class="bg-[#e6f2ff] rounded-3xl p-8 space-y-6">
                 <div class="w-16 h-16 bg-[#f150a7]/10 rounded-full flex items-center justify-center mx-auto">
                     <svg class="w-8 h-8 text-[#f150a7]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
@@ -780,7 +856,7 @@
             </div>
 
             <div class="text-center reveal-up">
-                <a href="#contact"
+                <a href="https://wa.me/659108198?text=Hello%20I%20am%20interested%20in%20your%20special%20events%20and%20workshops%20-can%20you%20share%20details" target="_blank"
                 class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full text-base font-medium transition-all duration-200 group">
                 <span>Learn More</span>
                 <div class="ml-3 bg-white group-hover:bg-white/90 group-hover:rotate-0 group-hover:translate-x-3 p-2 -rotate-45 rounded-full transition-all">
@@ -795,7 +871,7 @@
 
         
         <!-- Yoga Practice Types Section -->
-        <section class="py-16 lg:py-32 bg-[#daecff]">
+        <section class="py-16 lg:py-32 bg-[#e6f2ff]">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
             <div class="text-center space-y-6 mb-16 reveal-up">
                 <div class="inline-flex items-center px-6 py-2 border border-gray-400 rounded-full">
@@ -948,110 +1024,213 @@
              <section class=" overflow-hidden py-16 pt-8 lg:pb-24">
             <div class="relative">
                 <div class="flex animate-scroll">
-                     <div class="flex space-x-6">
-                        <div class="aspect-square w-72 h-72 rounded-2xl overflow-hidden bg-gray-200 flex-shrink-0 marquee-item transition-all duration-300 ease-in-out hover:shadow-2xl">
-                            <img src="gallery/gallery_1.png" alt="Yoga Practice" class="w-full h-full object-cover transition-transform duration-300 ease-in-out" />
-                        </div>
-                        <div class="aspect-square w-72 h-72 rounded-2xl overflow-hidden bg-gray-200 flex-shrink-0 marquee-item transition-all duration-300 ease-in-out hover:shadow-2xl">
-                            <img src="gallery/gallery_2.png" alt="Yoga Practice" class="w-full h-full object-cover transition-transform duration-300 ease-in-out" />
-                        </div>
-                        <div class="aspect-square w-72 h-72 rounded-2xl overflow-hidden bg-gray-200 flex-shrink-0 marquee-item transition-all duration-300 ease-in-out hover:shadow-2xl">
-                            <img src="gallery/gallery_3.png" alt="Yoga Practice" class="w-full h-full object-cover transition-transform duration-300 ease-in-out" />
-                        </div>
-                        <div class="aspect-square w-72 h-72 rounded-2xl overflow-hidden bg-gray-200 flex-shrink-0 marquee-item transition-all duration-300 ease-in-out hover:shadow-2xl">
-                            <img src="gallery/gallery_4.png" alt="Yoga Practice" class="w-full h-full object-cover transition-transform duration-300 ease-in-out" />
-                        </div>
-                        <div class="aspect-square w-72 h-72 rounded-2xl overflow-hidden bg-gray-200 flex-shrink-0 marquee-item transition-all duration-300 ease-in-out hover:shadow-2xl">
-                            <img src="gallery/gallery_5.png" alt="Yoga Practice" class="w-full h-full object-cover transition-transform duration-300 ease-in-out" />
-                        </div>
-                        <div class="aspect-square w-72 h-72 rounded-2xl overflow-hidden bg-gray-200 flex-shrink-0 marquee-item transition-all duration-300 ease-in-out hover:shadow-2xl">
-                            <img src="gallery/gallery_6.png" alt="Yoga Practice" class="w-full h-full object-cover transition-transform duration-300 ease-in-out" />
-                        </div>
-                        <div class="aspect-square w-72 h-72 rounded-2xl overflow-hidden bg-gray-200 flex-shrink-0 marquee-item transition-all duration-300 ease-in-out hover:shadow-2xl">
-                            <img src="gallery/gallery_7.png" alt="Yoga Practice" class="w-full h-full object-cover transition-transform duration-300 ease-in-out" />
-                        </div>
-                        <div class="aspect-square w-72 h-72 rounded-2xl overflow-hidden bg-gray-200 flex-shrink-0 marquee-item transition-all duration-300 ease-in-out hover:shadow-2xl">
-                            <img src="gallery/gallery_8.png" alt="Yoga Practice" class="w-full h-full object-cover transition-transform duration-300 ease-in-out" />
-                        </div>
-                        <div class="aspect-square w-72 h-72 rounded-2xl overflow-hidden bg-gray-200 flex-shrink-0 marquee-item transition-all duration-300 ease-in-out hover:shadow-2xl">
-                            <img src="gallery/gallery_9.png" alt="Yoga Practice" class="w-full h-full object-cover transition-transform duration-300 ease-in-out" />
-                        </div>
-                        <div class="aspect-square w-72 h-72 rounded-2xl overflow-hidden bg-gray-200 flex-shrink-0 marquee-item transition-all duration-300 ease-in-out hover:shadow-2xl">
-                            <img src="gallery/gallery_10.png" alt="Yoga Practice" class="w-full h-full object-cover transition-transform duration-300 ease-in-out" />
-                        </div>
+                     <div class="flex space-x-6" id="gallery-container">
+                        <!-- Gallery images will be dynamically loaded here -->
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Testimonials Section -->
-        <section id="testimonials" class="py-16 lg:py-32 bg-[#daecff]">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+        <script>
+            // Load gallery images dynamically from manifest
+            async function loadGalleryImages() {
+                try {
+                    const response = await fetch('gallery/images.json');
+                    const images = await response.json();
+                    const container = document.getElementById('gallery-container');
+                    
+                    images.forEach(fileName => {
+                        const div = document.createElement('div');
+                        div.className = 'aspect-square w-72 h-72 rounded-2xl overflow-hidden bg-gray-200 flex-shrink-0 marquee-item transition-all duration-300 ease-in-out hover:shadow-2xl';
+                        
+                        const img = document.createElement('img');
+                        img.src = `gallery/${fileName}`;
+                        img.alt = 'Yoga Practice';
+                        img.className = 'w-full h-full object-cover transition-transform duration-300 ease-in-out';
+                        
+                        div.appendChild(img);
+                        container.appendChild(div);
+                    });
+                } catch (error) {
+                    console.error('Gallery loading error:', error);
+                }
+            }
+
+            // Load gallery when page is ready
+            document.addEventListener('DOMContentLoaded', loadGalleryImages);
+        </script>
+
+            <!-- Testimonials Section -->
+            <section id="testimonials" class="py-16 lg:py-32 bg-[#e6f2ff]">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
                 <div class="text-center space-y-6 mb-16 reveal-up">
                     <div class="inline-flex items-center px-6 py-2 border border-gray-400 rounded-full">
-                        <span class="text-gray-600 text-base font-dm-sans font-medium">Testimonials</span>
+                    <span class="text-gray-600 text-base font-dm-sans font-medium">Testimonials</span>
                     </div>
 
                     <h2 class="font-times text-4xl sm:text-5xl lg:text-6xl text-gray-900 leading-tight">
-                        What Students Say About <span class="text-primary">Their Journey</span>
+                    What Students Say About <span class="text-primary">Their Journey</span>
                     </h2>
 
                     <p class="text-gray-600 text-lg leading-relaxed">
-                        Real stories from students who have transformed their wellness through personalized yoga practice.
+                    Real stories from students who have transformed their wellness through personalized yoga practice.
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 reveal-up">
-                    <div class="bg-white rounded-3xl p-8 space-y-4">
-                        <p class="font-times italic text-2xl text-gray-600 leading-relaxed">
-                            "The personalized attention in small groups is incredible. I've been practicing for 2 years now and feel stronger and more balanced than ever."
-                        </p>
-                        <div class="space-y-1">
-                            <h4 class="font-inter font-semibold text-xl text-gray-900">Priya Sharma</h4>
-                            <p class="font-inter text-base text-gray-600">32, Working Professional</p>
+                <!-- Testimonials Carousel -->
+                <div class="relative mb-8 reveal-up">
+                    <div class="carousel-container">
+                        <div id="testimonials-carousel" class="flex">
+                            <!-- Testimonials will be dynamically loaded here -->
                         </div>
                     </div>
 
-                    <div class="bg-white rounded-3xl p-8 space-y-4">
-                        <p class="font-times italic text-2xl text-gray-600 leading-relaxed">
-                            "The personalized attention in small groups is incredible. I've been practicing for 2 years now and feel stronger and more balanced than ever."
-                        </p>
-                        <div class="space-y-1">
-                            <h4 class="font-inter font-semibold text-xl text-gray-900">Priya Sharma</h4>
-                            <p class="font-inter text-base text-gray-600">32, Working Professional</p>
-                        </div>
-                    </div>
+                    <div class="flex items-center justify-center gap-6 mt-8">
+                        <button id="carousel-prev" class="carousel-btn">
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
 
-                    <div class="bg-white rounded-3xl p-8 space-y-4">
-                        <p class="font-times italic text-2xl text-gray-600 leading-relaxed">
-                            "The personalized attention in small groups is incredible. I've been practicing for 2 years now and feel stronger and more balanced than ever."
-                        </p>
-                        <div class="space-y-1">
-                            <h4 class="font-inter font-semibold text-xl text-gray-900">Priya Sharma</h4>
-                            <p class="font-inter text-base text-gray-600">32, Working Professional</p>
+                        <div id="carousel-indicators" class="carousel-indicators">
+                            <!-- Indicators will be dynamically created here -->
                         </div>
+
+                        <button id="carousel-next" class="carousel-btn">
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
                     </div>
                 </div>
-
-                <div class="flex justify-center space-x-4 reveal-up">
-                    <button class="w-12 h-12 bg-primary rounded-full flex items-center justify-center hover:bg-primary/90 transition-all duration-200 group">
-                        <svg class="w-5 h-5 text-white group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                        </svg>
-                    </button>
-                    <button class="w-12 h-12 bg-primary rounded-full flex items-center justify-center hover:bg-primary/90 transition-all duration-200 group">
-                        <svg class="w-5 h-5 text-white group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
-                    </button>
                 </div>
-            </div>
-        </section>
+            </section>
+
+            <script>
+                let currentIndex = 0;
+                let testimonials = [];
+                let autoplayTimeout;
+
+                async function loadTestimonials() {
+                    try {
+                        const response = await fetch('testimonials.json');
+                        testimonials = await response.json();
+                        const carousel = document.getElementById('testimonials-carousel');
+                        const indicatorsContainer = document.getElementById('carousel-indicators');
+                        
+                        // Create carousel items (no duplication)
+                        testimonials.forEach((testimonial) => {
+                            const div = document.createElement('div');
+                            
+                            if (testimonial.type === 'video') {
+                                // Video-only testimonial
+                                div.className = 'flex-shrink-0 w-full md:w-1/2 lg:w-1/3 bg-white rounded-3xl p-8 space-y-4 h-[450px] flex flex-col justify-between overflow-hidden m-4';
+                                div.innerHTML = `
+                                    <div class="relative w-full rounded-2xl overflow-hidden bg-black flex-grow">
+                                        <video class="w-full h-full object-cover" controls>
+                                            <source src="${testimonial.video}" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </div>
+                                    <div class="space-y-1">
+                                        <h4 class="font-inter font-semibold text-lg text-gray-900">${testimonial.author}</h4>
+                                    </div>
+                                `;
+                            } else {
+                                // Text testimonial
+                                div.className = 'flex-shrink-0 w-full md:w-1/2 lg:w-1/3 bg-white rounded-3xl p-8 space-y-4 h-[450px] flex flex-col justify-between m-4';
+                                div.innerHTML = `
+                                    <p class="font-times italic text-lg text-gray-600 leading-relaxed line-clamp-6">
+                                        "${testimonial.quote}"
+                                    </p>
+                                    <div class="space-y-1">
+                                        <h4 class="font-inter font-semibold text-lg text-gray-900">${testimonial.author}</h4>
+                                        <p class="font-inter text-sm text-gray-600">${testimonial.age ? testimonial.age + ', ' : ''}${testimonial.relation || 'Student'}</p>
+                                    </div>
+                                `;
+                            }
+                            carousel.appendChild(div);
+                        });
+
+                        // Create indicators
+                        testimonials.forEach((_, index) => {
+                            const indicator = document.createElement('button');
+                            indicator.className = 'carousel-indicator' + (index === 0 ? ' active' : '');
+                            indicator.onclick = () => goToSlide(index);
+                            indicatorsContainer.appendChild(indicator);
+                        });
+
+                        // Setup carousel buttons
+                        document.getElementById('carousel-prev').addEventListener('click', () => {
+                            currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+                            updateCarousel();
+                            resetAutoplay();
+                        });
+
+                        document.getElementById('carousel-next').addEventListener('click', () => {
+                            currentIndex = (currentIndex + 1) % testimonials.length;
+                            updateCarousel();
+                            resetAutoplay();
+                        });
+
+                        // Initialize carousel
+                        updateCarousel();
+                        startAutoplay();
+
+                    } catch (error) {
+                        console.error('Testimonials loading error:', error);
+                    }
+                }
+
+                function updateCarousel() {
+                    const carousel = document.getElementById('testimonials-carousel');
+                    const itemsPerPage = getItemsPerPage();
+                    const offset = -currentIndex * (100 / itemsPerPage);
+                    
+                    carousel.style.transform = `translateX(${offset}%)`;
+
+                    // Update indicators
+                    document.querySelectorAll('.carousel-indicator').forEach((indicator, index) => {
+                        if (index === currentIndex) {
+                            indicator.classList.add('active');
+                        } else {
+                            indicator.classList.remove('active');
+                        }
+                    });
+                }
+
+                function getItemsPerPage() {
+                    if (window.innerWidth < 768) return 1;
+                    if (window.innerWidth < 1024) return 2;
+                    return 3;
+                }
+
+                function goToSlide(index) {
+                    currentIndex = index;
+                    updateCarousel();
+                    resetAutoplay();
+                }
+
+                function startAutoplay() {
+                    autoplayTimeout = setInterval(() => {
+                        currentIndex = (currentIndex + 1) % testimonials.length;
+                        updateCarousel();
+                    }, 5000);
+                }
+
+                function resetAutoplay() {
+                    clearInterval(autoplayTimeout);
+                    startAutoplay();
+                }
+
+                window.addEventListener('resize', updateCarousel);
+                document.addEventListener('DOMContentLoaded', loadTestimonials);
+            </script>
 
         <!-- CTA Section -->
         <section class="py-16 lg:py-32 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-                <div class="bg-[#daecff] rounded-3xl p-12 lg:p-16 text-center space-y-8 reveal-up">
+                <div class="bg-[#e6f2ff] rounded-3xl p-12 lg:p-16 text-center space-y-8 reveal-up">
                     <h2 class="font-times text-4xl sm:text-5xl lg:text-6xl text-gray-900 leading-tight">
                         Begin Your Journey of <span class="text-[#f150a7]">Balance and Well-Being Today</span>
                     </h2>
@@ -1060,7 +1239,7 @@
                         Join our supportive space where mindful movement, breathwork, and personal guidance help you feel stronger, calmer, and more centered.
                     </p>
 
-                    <a href="#contact"
+                    <a href="https://wa.me/659108198?text=Hi%20I%20would%20like%20to%20schedule%20a%20free%20consultation%20-please%20advise%20next%20steps" target="_blank"
                         class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full text-base font-medium transition-all duration-200 group">
                         <span>Schedule Free Consultation</span>
                         <div class="ml-3 bg-white group-hover:bg-white/90 group-hover:translate-x-3 p-2  rounded-full transition-all">
@@ -1082,19 +1261,19 @@
                 <div class="text-center mt-12 scurrentColor4 reveal-up">
                     <p class="text-gray-600">Follow us for daily yoga tips, class updates, and inspiration.</p>
                     <div class="flex justify-center space-x-6 pt-4">
-                        <a href="#" class="w-9 h-9 bg-primary rounded-md flex items-center justify-center hover:bg-primary/90 transition-colors">
+                        <a href="https://www.facebook.com/sereneblissyoga" target="_blank" class="w-9 h-9 bg-primary rounded-md flex items-center justify-center hover:bg-primary/90 transition-colors">
                             <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                             </svg>
                         </a>
-                        <a href="#" class="w-9 h-9 bg-primary rounded-md flex items-center justify-center hover:bg-primary/90 transition-colors">
+                        <a href="https://www.instagram.com/yogawithreshma" target="_blank" class="w-9 h-9 bg-primary rounded-md flex items-center justify-center hover:bg-primary/90 transition-colors">
                             <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.749.097.118.112.221.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.746-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.987C24.007 5.367 18.641.001.012.017z"/>
+                                <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.117.63c-.798.297-1.473.648-2.123 1.299-.55.55-.902 1.325-1.199 2.123-.297.788-.498 1.658-.558 2.936C.008 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.936.297.798.649 1.473 1.299 2.123.55.55 1.325.902 2.123 1.199.788.297 1.658.498 2.936.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.261 2.936-.558.798-.297 1.473-.649 2.123-1.299.55-.55.902-1.325 1.199-2.123.297-.788.498-1.658.558-2.936.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.261-2.148-.558-2.936-.297-.798-.649-1.473-1.299-2.123-.55-.55-1.325-.902-2.123-1.199-.788-.297-1.658-.498-2.936-.558C15.667.008 15.26 0 12 0zm0 2.16c3.203 0 3.585.009 4.85.070 1.17.054 1.805.243 2.227.403.562.217.96.477 1.382.896.419.42.679.819.896 1.381.16.422.35 1.057.404 2.227.061 1.265.07 1.647.07 4.85s-.009 3.585-.07 4.85c-.054 1.17-.243 1.805-.403 2.227-.217.562-.477.96-.896 1.382-.42.419-.819.679-1.381.896-.422.16-1.057.35-2.227.404-1.265.061-1.647.07-4.85.07s-3.585-.009-4.85-.07c-1.17-.054-1.805-.243-2.227-.403-.562-.217-.96-.477-1.382-.896-.419-.42-.679-.819-.896-1.381-.16-.422-.35-1.057-.404-2.227-.061-1.265-.07-1.647-.07-4.85s.009-3.585.07-4.85c.054-1.17.243-1.805.403-2.227.217-.562.477-.96.896-1.382.42-.419.819-.679 1.381-.896.422-.16 1.057-.35 2.227-.404 1.265-.061 1.647-.07 4.85-.07zm0 3.678c-3.401 0-6.162 2.761-6.162 6.162 0 3.401 2.761 6.162 6.162 6.162 3.401 0 6.162-2.761 6.162-6.162 0-3.401-2.761-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                             </svg>
                         </a>
-                        <a href="#" class="w-9 h-9 bg-primary rounded-md flex items-center justify-center hover:bg-primary/90 transition-colors">
+                        <a href="https://wa.me/659108198" target="_blank" class="w-9 h-9 bg-primary rounded-md flex items-center justify-center hover:bg-primary/90 transition-colors">
                             <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.794 1.972c-2.876 2.191-3.637 5.694-1.732 8.82 1.906 3.126 5.694 4.081 8.82 1.732 3.127-2.348 3.637-6.135 1.732-8.82-.907-.906-2.156-1.432-3.622-1.704m5.604 5.602a11.85 11.85 0 01-3.622 8.82c-3.127 2.349-7.915 1.904-9.821-1.222-1.906-3.126-.907-6.908 2.22-8.82 3.126-1.906 7.915-1.461 9.821 1.732"/>
                             </svg>
                         </a>
                     </div>
