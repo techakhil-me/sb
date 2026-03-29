@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Yoga Classes - Serene Bliss</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'times': ['Times New Roman', 'serif'],
+                        'dm-sans': ['DM Sans', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#f150a7',
+                        'primary-light': '#e6f2ff',
+                        'secondary': '#3772ad',
+                        'gray-light': '#f8fafc',
+                    },
+                }
+            }
+        }
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const menuOpen = document.getElementById('menu-open');
+            const menuClose = document.getElementById('menu-close');
+            
+            if (menu.classList.contains('opacity-0')) {
+                // Show menu
+                menu.classList.remove('hidden');
+                setTimeout(() => {
+                    menu.classList.remove('opacity-0', 'scale-95');
+                    menu.classList.add('opacity-100', 'scale-100');
+                }, 10);
+                menuOpen.classList.add('hidden');
+                menuClose.classList.remove('hidden');
+            } else {
+                // Hide menu
+                menu.classList.remove('opacity-100', 'scale-100');
+                menu.classList.add('opacity-0', 'scale-95');
+                setTimeout(() => {
+                    menu.classList.add('hidden');
+                }, 300);
+                menuOpen.classList.remove('hidden');
+                menuClose.classList.add('hidden');
+            }
+        }
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+
+    <!-- Navigation Header (Fixed) -->
+    <nav class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-white/40 border-b border-white/20 w-screen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+            <div class="flex items-center justify-between h-16">
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button onclick="toggleMobileMenu()"
+                        class="w-10 h-10 flex items-center justify-center text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:text-gray-900 z-60 relative rounded-lg transition-all duration-200">
+                        <svg id="menu-open" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg id="menu-close" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Left Navigation -->
+                <div class="hidden md:flex items-center space-x-8 flex-1">
+                    <a href="index.html" class="text-gray-600 hover:text-gray-900 text-sm font-medium tracking-tight transition-colors cursor-pointer">Home</a>
+                    <a href="classes.html" class="text-gray-600 hover:text-gray-900 text-sm font-medium tracking-tight transition-colors cursor-pointer">Classes</a>
+                </div>
+
+                <!-- Logo -->
+                <div class="flex-1 flex justify-center md:justify-center items-center">
+                    <img class="h-14" src="/assets/SereneBlissLogo.png" alt="Serene Bliss Logo" />
+                </div>
+
+                <!-- Right Navigation -->
+                <div class="hidden md:flex items-center justify-end flex-1">
+                    <a href="https://wa.me/6591081989?text=Hi%20I%20am%20interested%20in%20a%20free%20yoga%20consultation%20-please%20share%20details" target="_blank"
+                        class="inline-flex items-center justify-center bg-white hover:bg-gray-50 text-gray-900 px-6 py-2 rounded-full text-base font-medium transition-all duration-200 group">
+                        <span>Contact</span>
+                        <div class="ml-3 bg-primary group-hover:bg-primary/90 group-hover:rotate-0 group-hover:translate-x-3 p-2 -rotate-45 rounded-full transition-all">
+                            <svg width="16" height="16" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 7H17M17 7L11 13M17 7L11 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Mobile contact button -->
+                <div class="md:hidden">
+                    <a href="https://wa.me/6591081989?text=Hi%20I%20am%20interested%20in%20a%20free%20yoga%20consultation%20-please%20share%20details" target="_blank"
+                        class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 group h-10 min-w-[120px]">
+                        <svg width="16" height="16" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2">
+                            <path d="M3.5 2.5h10c.552 0 1 .448 1 1v10c0 .552-.448 1-1 1h-10c-.552 0-1-.448-1-1v-10c0-.552.448-1 1-1z" stroke="currentColor" stroke-width="1.5" />
+                            <path d="M6.5 5.5h4M6.5 8.5h4M6.5 11.5h2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                        </svg>
+                        <span>Contact</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Full Page Mobile Navigation Menu -->
+            <div id="mobile-menu" class="hidden opacity-0 scale-95 transition-all duration-300 ease-in-out md:hidden fixed inset-0 z-40 bg-white w-screen">
+                <div class="flex flex-col items-center justify-center min-h-screen space-y-8 px-8 bg-white">
+                    <!-- Close Button -->
+                    <button onclick="toggleMobileMenu()"
+                        class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none z-50 rounded-lg transition-all duration-200">
+                        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+
+                    <!-- Logo -->
+                    <div class="mb-8 transform transition-all duration-500 delay-100">
+                        <img class="h-16" src="/assets/SereneBlissLogo.png" alt="Serene Bliss Logo"/>
+                    </div>
+
+                    <!-- Navigation Links -->
+                    <nav class="flex flex-col items-center space-y-8 text-center">
+                        <a href="index.html" onclick="toggleMobileMenu();"
+                            class="font-times text-3xl text-gray-900 hover:text-primary transition-all duration-300 transform hover:scale-105">Home</a>
+                        <a href="classes.html" onclick="toggleMobileMenu();"
+                            class="font-times text-3xl text-gray-900 hover:text-primary transition-all duration-300 transform hover:scale-105">Classes</a>
+                    </nav>
+
+                    <!-- Contact Button -->
+                    <div class="pt-8 transform transition-all duration-500 delay-200">
+                        <a href="https://wa.me/6591081989?text=Hi%20I%20am%20interested%20in%20a%20free%20yoga%20consultation%20-please%20share%20details" target="_blank" onclick="toggleMobileMenu();"
+                            class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full text-base font-medium transition-all duration-200 h-12 min-w-[140px]">
+                            <span>Contact Us</span>
+                        </a>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="text-center pt-4 space-y-2 transform transition-all duration-500 delay-300">
+                        <p class="text-gray-600 text-sm">Ready to start your yoga journey?</p>
+                        <p class="text-gray-900 font-medium">Call us at +65 9108 1989</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-[50vh] flex items-end pt-32 pb-16 lg:pb-32 bg-white relative overflow-hidden">
+        <div class="absolute inset-0 -z-10">
+            <div class="absolute -bottom-10 left-0 right-0 bg-white/60 blur-3xl h-96 w-96 rounded-full scale-[1.9]"></div>
+        </div>
+        
+        <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+            <div class="max-w-2xl space-y-6">
+                <h1 class="font-times text-4xl sm:text-6xl lg:text-7xl text-gray-900 leading-tight reveal-up">
+                    Our <span class="text-primary">Yoga Classes</span>
+                </h1>
+                <p class="text-gray-600 text-lg lg:text-xl leading-relaxed max-w-xl reveal-up">
+                    Discover the perfect yoga practice tailored to your needs and lifestyle. From group sessions to personalized one-on-one classes.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Group Yoga Classes Section -->
+    <section class="py-16 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+            <div class="space-y-12 reveal-up">
+                <!-- Header with Icon and Title -->
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                        </div>
+                        <h2 class="font-times text-4xl sm:text-5xl lg:text-6xl text-gray-900 leading-tight">Group Yoga Classes</h2>
+                    </div>
+
+                    <!-- Location and Timing Tags -->
+                    <div class="flex flex-wrap gap-4 mt-4">
+                        <div class="flex items-center space-x-2 text-gray-600">
+                            <svg class="w-5 h-5 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <span class="text-gray-600 font-dm-sans font-medium">Online & In-person (Singapore)</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-gray-600">
+                            <svg class="w-5 h-5 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span class="text-gray-600 font-dm-sans font-medium">Various times available</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <p class="text-gray-600 text-lg lg:text-xl leading-relaxed max-w-3xl">
+                    Join our small-group sessions for a supportive, community-focused practice. Each class blends mindful movement, breathwork, and meditation — perfect for all levels looking to build strength, flexibility, and inner calm.
+                </p>
+
+                <!-- Schedule Card -->
+                <div class="bg-[#e6f2ff] rounded-3xl p-8 lg:p-12 space-y-8">
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-6 h-6 text-secondary flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h18M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            <h3 class="font-times text-3xl text-gray-900">Class Schedule</h3>
+                        </div>
+                        
+                        <p class="text-gray-600 italic text-base">*Batch timings are subject to change</p>
+
+                        <div class="overflow-x-auto">
+                            <table class="w-full">
+                                <thead>
+                                    <tr class="border-b border-blue-200">
+                                        <th class="text-left py-3 px-4 font-medium text-gray-900 font-dm-sans">Day</th>
+                                        <th class="text-left py-3 px-4 font-medium text-gray-900 font-dm-sans">Time</th>
+                                        <th class="text-left py-3 px-4 font-medium text-gray-900 font-dm-sans">Type</th>
+                                        <th class="text-left py-3 px-4 font-medium text-gray-900 font-dm-sans">Format</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b border-blue-100">
+                                        <td class="py-3 px-4 text-gray-600">Monday</td>
+                                        <td class="py-3 px-4 text-gray-600">7:15 AM</td>
+                                        <td class="py-3 px-4 text-gray-600">Gentle Flow</td>
+                                        <td class="py-3 px-4 text-gray-600">Hybrid</td>
+                                    </tr>
+                                    <tr class="border-b border-blue-100">
+                                        <td class="py-3 px-4 text-gray-600">Monday</td>
+                                        <td class="py-3 px-4 text-gray-600">10:00 AM</td>
+                                        <td class="py-3 px-4 text-gray-600">Vinyasa Flow</td>
+                                        <td class="py-3 px-4 text-gray-600">Hybrid</td>
+                                    </tr>
+                                    <tr class="border-b border-blue-100">
+                                        <td class="py-3 px-4 text-gray-600">Wednesday</td>
+                                        <td class="py-3 px-4 text-gray-600">7:15 AM</td>
+                                        <td class="py-3 px-4 text-gray-600">Hatha Yoga</td>
+                                        <td class="py-3 px-4 text-gray-600">Hybrid</td>
+                                    </tr>
+                                    <tr class="border-b border-blue-100">
+                                        <td class="py-3 px-4 text-gray-600">Wednesday</td>
+                                        <td class="py-3 px-4 text-gray-600">10:00 AM</td>
+                                        <td class="py-3 px-4 text-gray-600">Power Yoga</td>
+                                        <td class="py-3 px-4 text-gray-600">Hybrid</td>
+                                    </tr>
+                                    <tr class="border-b border-blue-100">
+                                        <td class="py-3 px-4 text-gray-600">Friday</td>
+                                        <td class="py-3 px-4 text-gray-600">7:15 AM</td>
+                                        <td class="py-3 px-4 text-gray-600">Gentle Flow</td>
+                                        <td class="py-3 px-4 text-gray-600">Hybrid</td>
+                                    </tr>
+                                    <tr class="border-b border-blue-100">
+                                        <td class="py-3 px-4 text-gray-600">Friday</td>
+                                        <td class="py-3 px-4 text-gray-600">10:00 AM</td>
+                                        <td class="py-3 px-4 text-gray-600">Vinyasa Flow</td>
+                                        <td class="py-3 px-4 text-gray-600">Hybrid</td>
+                                    </tr>
+                                    <tr class="border-b border-blue-100">
+                                        <td class="py-3 px-4 text-gray-600">Tuesday</td>
+                                        <td class="py-3 px-4 text-gray-600">6:30 PM</td>
+                                        <td class="py-3 px-4 text-gray-600">Hatha Yoga</td>
+                                        <td class="py-3 px-4 text-gray-600">Hybrid</td>
+                                    </tr>
+                                    <tr class="border-b border-blue-100">
+                                        <td class="py-3 px-4 text-gray-600">Thursday</td>
+                                        <td class="py-3 px-4 text-gray-600">6:30 PM</td>
+                                        <td class="py-3 px-4 text-gray-600">Vinyasa Flow</td>
+                                        <td class="py-3 px-4 text-gray-600">Hybrid</td>
+                                    </tr>
+                                    <tr class="border-b border-blue-100">
+                                        <td class="py-3 px-4 text-gray-600">Tuesday</td>
+                                        <td class="py-3 px-4 text-gray-600">7:30 PM</td>
+                                        <td class="py-3 px-4 text-gray-600">Power Yoga</td>
+                                        <td class="py-3 px-4 text-gray-600">Hybrid</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 px-4 text-gray-600">Saturday</td>
+                                        <td class="py-3 px-4 text-gray-600">9:00 AM</td>
+                                        <td class="py-3 px-4 text-gray-600">Power Yoga</td>
+                                        <td class="py-3 px-4 text-gray-600">In-person</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/6591081989?text=Hi%20Reshma%2C%20I%20am%20interested%20in%20your%20group%20yoga%20classes.%20Please%20share%20more%20details" target="_blank"
+                        class="inline-flex items-center justify-center w-full bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full text-base font-medium transition-all duration-200 group">
+                        <span>Enquire Now</span>
+                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kids Yoga Classes Section -->
+    <section class="py-16 lg:py-32 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+            <div class="space-y-12 reveal-up">
+                <!-- Header with Icon and Title -->
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <h2 class="font-times text-4xl sm:text-5xl lg:text-6xl text-gray-900 leading-tight">Kids Yoga Classes</h2>
+                    </div>
+
+                    <!-- Location and Timing Tags -->
+                    <div class="flex flex-wrap gap-4 mt-4">
+                        <div class="flex items-center space-x-2 text-gray-600">
+                            <svg class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <span class="text-gray-600 font-dm-sans font-medium">In-person (Singapore)</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-gray-600">
+                            <svg class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span class="text-gray-600 font-dm-sans font-medium">Evening sessions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <p class="text-gray-600 text-lg lg:text-xl leading-relaxed max-w-3xl">
+                    Fun, mindful movement designed for children to help young ones develop balance, focus, and calm. Our classes combine playful poses, breathing exercises, and relaxation techniques in an engaging, age-appropriate format.
+                </p>
+
+                <!-- Schedule Card -->
+                <div class="bg-white rounded-3xl p-8 lg:p-12 space-y-8 shadow-lg">
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-6 h-6 text-primary flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h18M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            <h3 class="font-times text-3xl text-gray-900">Class Schedule</h3>
+                        </div>
+                        
+                        <p class="text-gray-600 italic text-base">*Schedule is subject to change. Contact for current availability.</p>
+
+                        <div class="overflow-x-auto">
+                            <table class="w-full">
+                                <thead>
+                                    <tr class="border-b border-gray-200">
+                                        <th class="text-left py-3 px-4 font-medium text-gray-900 font-dm-sans">Day</th>
+                                        <th class="text-left py-3 px-4 font-medium text-gray-900 font-dm-sans">Time</th>
+                                        <th class="text-left py-3 px-4 font-medium text-gray-900 font-dm-sans">Type</th>
+                                        <th class="text-left py-3 px-4 font-medium text-gray-900 font-dm-sans">Format</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b border-gray-100">
+                                        <td class="py-3 px-4 text-gray-600">Monday</td>
+                                        <td class="py-3 px-4 text-gray-600">6:00 PM</td>
+                                        <td class="py-3 px-4 text-gray-600">Kids Yoga</td>
+                                        <td class="py-3 px-4 text-gray-600">In-person</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 px-4 text-gray-600">Tuesday</td>
+                                        <td class="py-3 px-4 text-gray-600">6:00 PM</td>
+                                        <td class="py-3 px-4 text-gray-600">Kids Yoga</td>
+                                        <td class="py-3 px-4 text-gray-600">In-person</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/6591081989?text=Hi%20Reshma%2C%20I%20am%20interested%20in%20your%20kids%20yoga%20classes.%20Please%20share%20more%20details" target="_blank"
+                        class="inline-flex items-center justify-center w-full bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full text-base font-medium transition-all duration-200 group">
+                        <span>Enquire Now</span>
+                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Personalized Classes Section -->
+    <section class="py-16 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+            <div class="space-y-12 reveal-up">
+                <div class="space-y-6">
+                    <div class="inline-flex items-center px-6 py-2 border border-gray-400 rounded-full">
+                        <span class="text-gray-600 text-base font-dm-sans font-medium">Personal Training</span>
+                    </div>
+                    
+                    <h2 class="font-times text-4xl sm:text-5xl lg:text-6xl text-gray-900 leading-tight">
+                        One-on-One <span class="text-primary">Personalised</span> Classes
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+                    <!-- Left Column: General Info -->
+                    <div class="space-y-8">
+                        <div class="space-y-4">
+                            <h3 class="font-times text-3xl text-gray-900">Tailored to Your Needs</h3>
+                            <p class="text-gray-600 text-lg leading-relaxed">
+                                One-on-One Personalised Yoga is tailored to your unique needs, goals, and schedule. Whether you're a beginner or advanced practitioner, our private sessions provide focused attention and customized sequences designed around your body, lifestyle, and objectives.
+                            </p>
+                        </div>
+
+                        <div class="space-y-6">
+                            <h4 class="font-times text-2xl text-gray-900">Why Choose Personalized Sessions?</h4>
+                            <div class="space-y-4">
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
+                                    <p class="text-gray-600 text-lg"><span class="font-medium text-gray-900">Personalised Attention</span> — 100% focused guidance tailored to your unique needs and goals</p>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
+                                    <p class="text-gray-600 text-lg"><span class="font-medium text-gray-900">Flexible Scheduling</span> — Choose times that work for your busy lifestyle and commitments</p>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
+                                    <p class="text-gray-600 text-lg"><span class="font-medium text-gray-900">Therapeutic Focus</span> — Address specific concerns like injury recovery or stress management</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Conditions -->
+                    <div class="bg-[#e6f2ff] rounded-3xl p-8 lg:p-12 space-y-8 h-fit">
+                        <div class="space-y-6">
+                            <h3 class="font-times text-2xl text-gray-900">Yoga for Chronic Conditions</h3>
+                            <p class="text-gray-600 text-base">We specialize in therapeutic yoga for various conditions:</p>
+                            
+                            <div class="space-y-3">
+                                <p class="text-gray-600 flex items-start">
+                                    <span class="text-primary font-bold mr-3 flex-shrink-0">•</span>
+                                    <span>Back Pain</span>
+                                </p>
+                                <p class="text-gray-600 flex items-start">
+                                    <span class="text-primary font-bold mr-3 flex-shrink-0">•</span>
+                                    <span>Diabetes</span>
+                                </p>
+                                <p class="text-gray-600 flex items-start">
+                                    <span class="text-primary font-bold mr-3 flex-shrink-0">•</span>
+                                    <span>High Blood Pressure / Hypertension</span>
+                                </p>
+                                <p class="text-gray-600 flex items-start">
+                                    <span class="text-primary font-bold mr-3 flex-shrink-0">•</span>
+                                    <span>Arthritis</span>
+                                </p>
+                                <p class="text-gray-600 flex items-start">
+                                    <span class="text-primary font-bold mr-3 flex-shrink-0">•</span>
+                                    <span>Hypothyroidism</span>
+                                </p>
+                                <p class="text-gray-600 flex items-start">
+                                    <span class="text-primary font-bold mr-3 flex-shrink-0">•</span>
+                                    <span>Asthma</span>
+                                </p>
+                            </div>
+
+                            <p class="text-gray-600 italic bg-white/60 p-4 rounded-lg border border-blue-100">
+                                Do reach out to us if you have other conditions. We'd love to help!
+                            </p>
+                        </div>
+
+                        <a href="https://wa.me/6591081989?text=Hi%20Reshma%2C%20I%20am%20interested%20in%20personalized%20yoga%20sessions.%20Please%20share%20more%20details" target="_blank"
+                            class="inline-flex items-center justify-center w-full bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full text-base font-medium transition-all duration-200 group">
+                            <span>Book Session</span>
+                            <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 lg:py-32 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 text-center space-y-8 reveal-up">
+            <h2 class="font-times text-3xl sm:text-4xl lg:text-5xl text-gray-900 leading-tight">
+                Ready to Start Your Journey?
+            </h2>
+            <p class="text-gray-600 text-lg lg:text-xl leading-relaxed">
+                Get in touch with us today to find the perfect yoga class for you.
+            </p>
+            <a href="https://wa.me/6591081989?text=Hi%20Reshma%2C%20I%20would%20like%20to%20know%20more%20about%20your%20yoga%20classes" target="_blank"
+                class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full text-base font-medium transition-all duration-200 group">
+                <span>Contact Us on WhatsApp</span>
+                <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <script>
+        // Reveal animations with GSAP
+        document.addEventListener('DOMContentLoaded', function() {
+            gsap.registerPlugin(ScrollTrigger);
+            
+            const reveals = document.querySelectorAll('.reveal-up');
+            reveals.forEach((elem) => {
+                gsap.to(elem, {
+                    duration: 1,
+                    opacity: 1,
+                    y: 0,
+                    scrollTrigger: {
+                        trigger: elem,
+                        start: 'top 80%',
+                        toggleActions: 'play none none none'
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
